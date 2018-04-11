@@ -48,11 +48,21 @@ class App extends React.Component {
 						return currentUser
 						? <NewQuestion { ...routeProps} />
 						: <Redirect to ="/login" /> 
-					}
-				} />
+					}} />
+					
+					<Route path="/profile" render={(routeProps) => {
+                        return currentUser
+                            ? <Profile currentUser={currentUser} routeProps={routeProps}/>
+                            : <Redirect to="/login" />
+                    }} />
+
 					<Route path="/questions" component={Questions} />
 
 					<Route path="/" component={Home} />
+
+					
+
+
 
 				</Switch>
 			</div>
