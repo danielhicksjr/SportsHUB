@@ -27,11 +27,13 @@ class Home extends React.Component {
 
         return (
             
-        <div>
+        <div class="home">
           <h1>SportsHUB</h1>
           <h3>All Questions</h3>
+        
+
           {questions.map((q) =>
-        <ul key={q._id}>
+        <ul key={q._id} class="questions">
         <Link to={`/questions/${q._id}`}>{q.name}</Link>
         
       </ul>
