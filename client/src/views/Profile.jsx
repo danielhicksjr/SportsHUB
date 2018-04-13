@@ -36,7 +36,7 @@ class Profile extends React.Component {
             })
         })
     }
-
+   
 
     componentDidMount(){
        
@@ -48,22 +48,11 @@ class Profile extends React.Component {
         })
 
     }
-    // componentDidMount(){
-       
-    // httpClient.getCurrentUser().then((serverResponse) => {
-    //            this.setState({ questions: serverResponse.data.filter((u)=>{
-	// 			//    console.log(this.props.currentUser._id, q._id)
-	// 			   return this.props.currentUser   
-	// 		   }) })
-    //     })
-
-    // }
-   
 
     render(props) {
         const { questions } = this.state
         const {currentUser} = this.props
-        console.log(currentUser)
+       
 	
         return (
             <div >
@@ -73,7 +62,9 @@ class Profile extends React.Component {
                 {questions.map((q) =>
                     <Card key={q._id}>
                     <CardTitle>{q.name}</CardTitle>
-                    <Button type="button" onClick={this.handleDeleteClck.bind(this, q._id)}>Delete</Button>    
+                    <Button type="button" onClick={this.handleDeleteClck.bind(this, q._id)}>Delete</Button>   
+                    
+                     
                     </Card>
                 )}
             </div>

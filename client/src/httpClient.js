@@ -77,11 +77,13 @@ httpClient.deleteUser = function(id) {
 	return this({method: 'delete', url: `/api/users/${id}`})
 }
 
-httpClient.deleteQuestion = function(id) {
-	return this({method: 'delete', url: `/api/questions/${id}`})
+httpClient.deleteProfile = function() {
+	return this({method: 'delete', url: `/api/users/me`})
 }
+
+
 httpClient.updateProile = function(fields) {
-    return this({method: 'patch', url: `/api/users/me`, data: fields})
+    return this({method: 'delete', url: `/api/users/me`, data: fields})
 }
 
 httpClient.defaults.headers.common.token = httpClient.getToken()
