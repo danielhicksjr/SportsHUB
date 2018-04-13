@@ -1,33 +1,67 @@
 import React from 'react'
+import { Button, Form, FormGroup, Label, Input, FormText, CardTitle, CardText, Card  } from 'reactstrap';
 import httpClient from '../httpClient'
+
+
 
 
 class Questions extends React.Component {
 
-    state = { questions: [] }
+    state = { question: [] }
 
     componentDidMount(){
-       
-        httpClient.getQuestions().then((serverResponse) => {
-               this.setState({ questions: serverResponse.data })
+       var questionId = this.props.routeProps.match.params.id
+        httpClient.getQuestion(questionId).then((serverResponse) => {
+               this.setState({ question: serverResponse.data })
         })
 
+    } 
+
+    submitAnswer(evt) {
+      evt.preventDefault()
+     var value = evt.target[0].value 
+     const answer = {
+      body: value,
+      user: this.props.currentUser._id
+     }
+      httpClient.addAnswer(this.props.routeProps.match.params.id, answer)
+        .then(serverResponse => {
+          this.setState({
+            question: serverResponse.data 
+          })
+        })
     }
 
 
     render() {
-        const { questions } = this.state
-
-
-        return (
-            <div className = "Questions">
-             <h1>Questions</h1>
-             <ul>{questions.map((q) => {
-               return  <li key={q._id}>{q.name}</li>
-             })}
-             </ul>
-             </div>
+        const { question } = this.state
+       return (
             
+        <div>
+
+          <h1>SportsHUB</h1>
+          <h3>Question</h3>
+        
+             <Card>
+        <CardTitle>{question.name}</CardTitle>
+        <CardText>{question.details}</CardText>
+
+           {question.answers && question.answers.map((a) => {
+         return <p>{a.body}</p>
+      })}
+      
+      <Form onSubmit={this.submitAnswer.bind(this)}>
+        <FormGroup>
+          <Label for="exampleText">Your Answer</Label>
+          <Input type="textarea" name="text" id="exampleText" />
+          <Input type="submit"></Input>
+          
+
+        </FormGroup>
+      </Form>
+      </Card>
+     
+        </div>
         )
     }
 }

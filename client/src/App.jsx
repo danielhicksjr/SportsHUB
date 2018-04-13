@@ -8,9 +8,11 @@ import LogIn from './views/LogIn'
 import LogOut from './views/LogOut'
 import SignUp from './views/SignUp'
 import Home from './views/Home'
+import EditProfile from './views/Edit'
 import Profile from './views/Profile'
 import NewQuestion from './views/NewQuestion'
 import Questions from './views/Questions'
+
 
 class App extends React.Component {
 	state = { currentUser: httpClient.getCurrentUser() }
@@ -46,20 +48,32 @@ class App extends React.Component {
 
 					<Route path="/questions/new" render={(routeProps) => {
 						return currentUser
-						? <NewQuestion { ...routeProps} />
+						? <NewQuestion { ...routeProps} currentUser={currentUser}/>
 						: <Redirect to ="/login" /> 
 					}} />
-					
+{/* 					
+					<Route path="/questions/show" render={(routeProps) => {
+						return currentUser
+						? <Questions
+					}} */}
+					<Route path='/profile/edit' render={(routeProps) => {
+						return <EditProfile onUpdateUserSuccess={this.onLoginSuccess.bind(this)} currentUser={currentUser} {...routeProps} />
+					}} /> 
+
 					<Route path="/profile" render={(routeProps) => {
                         return currentUser
                             ? <Profile currentUser={currentUser} routeProps={routeProps}/>
                             : <Redirect to="/login" />
                     }} />
 
-					<Route path="/questions" component={Questions} />
+					<Route path="/questions/:id" render={(routeProps) => {
+						return <Questions currentUser={currentUser} routeProps={routeProps} />
+					 }} />
+					
+					
 
 					<Route path="/" component={Home} />
-
+					
 					
 
 

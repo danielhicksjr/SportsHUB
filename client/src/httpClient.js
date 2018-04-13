@@ -57,12 +57,31 @@ httpClient.logOut = function() {
 	return true
 }
 
+httpClient.addAnswer = function(id, answer) {
+	return this({ method: 'post', url: `/api/questions/${id}`, data: answer})
+}
+
 httpClient.getQuestions = function() {
 	return this({method: 'get', url: '/api/questions' })
 }
 
+httpClient.getQuestion = function(id) {
+	return this({method: 'get', url: `/api/questions/${id}` })
+}
+
 httpClient.createQuestion = function(questionInfo) {
 	return this({ method: 'post', url: '/api/questions', data: questionInfo})
+}
+
+httpClient.deleteUser = function(id) {
+	return this({method: 'delete', url: `/api/users/${id}`})
+}
+
+httpClient.deleteQuestion = function(id) {
+	return this({method: 'delete', url: `/api/questions/${id}`})
+}
+httpClient.updateProile = function(fields) {
+    return this({method: 'patch', url: `/api/users/me`, data: fields})
 }
 
 httpClient.defaults.headers.common.token = httpClient.getToken()

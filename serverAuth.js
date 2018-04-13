@@ -13,6 +13,7 @@ function signToken(user) {
 
 // function for verifying tokens
 function verifyToken(req, res, next) {
+	console.log("verify")
 	// grab token from either headers, req.body, or query string
 	const token = req.get('token') || req.body.token || req.query.token
 	// if no token present, deny access
@@ -27,6 +28,7 @@ function verifyToken(req, res, next) {
 			if(!user) return res.json({success: false, message: "Invalid token."})
 			// otherwise, add user to req object
 			req.user = user
+			console.log('this is the user', req.user)
 			// go on to process the route:
 			next()
 		})

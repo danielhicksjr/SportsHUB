@@ -6,11 +6,14 @@ const NavBar = (props) => {
 		<div className='NavBar'>
 			<Link to="/">Home</Link>
 			<Link to='/profile'>Profile</Link>
+			
+			
 			{props.currentUser
 				? (
 					<span>
-						<Link to="/questions/new">Add Question</Link>
+						<Link to="/questions/new">Ask Question</Link>
 						<Link to="/logout">Log Out</Link>
+						<Link to=''>Favorite Team</Link> 
 					</span>
 				)
 				: (

@@ -5,7 +5,12 @@ import httpClient from '../httpClient'
 class NewQuestion extends React.Component {
 
   state = {
-    fields: { name: '', details: '', answers: '' }
+    fields: { 
+      name: '', 
+      details: '', 
+      answers: '' ,
+      user: this.props.currentUser._id
+    }
   }
 
   handleFormChange(evt) {
@@ -29,11 +34,11 @@ class NewQuestion extends React.Component {
     const { name, details, answers } = this.state.fields 
     return (
       <div className="NewQuestion">
-        <h1>Add A Question</h1>
+        <h1>Ask A Question</h1>
         <form onChange={this.handleFormChange.bind(this)} onSubmit={this.handleFormSubmit.bind(this)}>
-          <input name="name" type="text" placeholder="Name" value={name} />
-          <input name="details" type="text" placeholder="Details" value={details} />
-          <input name="answers" type="text" placeholder="Answers" value={answers} />
+          <input name="name" type="text" placeholder="Subject" value={name} />
+          <input name="details" type="text" placeholder="Question" value={details} />
+          {/* <input name="answers" type="text" placeholder="Answers" value={answers} /> */}
           <button>Submit</button>
         </form>
       </div>

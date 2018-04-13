@@ -10,8 +10,7 @@ module.exports = {
     },
 
     create: (req, res) => {
-        console.log(req.user)
-        Question.create({...req.body, user: req.user}, (err, question) => {
+		 Question.create(req.body, (err, question) => {
             res.json({ success: true, message: "question created.", question})
 
         })
@@ -25,7 +24,15 @@ module.exports = {
 			})
 		})
 	},
-                
+			
+	addAnswer: (req, res) => {
+		Question.findById(req.params.id, (err, question) => {
+		question.answers.push(req.body)
+		question.save((err) => {
+			res.json(question)
+		})
+		})
+	},
 
     show: (req, res) => {
 		console.log("Current Question:")
@@ -35,10 +42,9 @@ module.exports = {
 		})
 	},
     
-    destroy: (req, res) => {
-		User.findByIdAndRemove(req.params.id, (err, question) => {
+	destroy: (req, res) => {
+		Question.findByIdAndRemove(req.params.id, (err, question) => {
 			res.json({success: true, message: "Question deleted.", })
 		})
 	}
-  
 }

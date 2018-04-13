@@ -17,6 +17,7 @@ questionsRouter.use(verifyToken)
 questionsRouter.get('/:id',questionsCtrl.show)
 questionsRouter.patch('/:id', questionsCtrl.update)
 questionsRouter.delete('/:id', questionsCtrl.destroy)
+questionsRouter.post('/:id', questionsCtrl.addAnswer )
 
 
 

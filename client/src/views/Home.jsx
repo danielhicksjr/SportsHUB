@@ -1,20 +1,45 @@
 import React from 'react'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Card, Button, CardTitle, CardText } from 'reactstrap';
+import httpClient from '../httpClient'
+import { Link } from 'react-router-dom'
 
 
-const Home = (props) => {
-	return (
-		<div className='Home'>
-			<h1>SportsHUB</h1>
-			
-			
-		</div>
 
-		
-	)
 
+
+class Home extends React.Component {
+
+    state = { questions: [] }
+
+    componentDidMount(){
+       
+        httpClient.getQuestions().then((serverResponse) => {
+               this.setState({ questions: serverResponse.data })
+        })
+
+    }
+
+
+    render() {
+        const { questions } = this.state
+
+        
+
+        return (
+            
+        <div>
+          <h1>SportsHUB</h1>
+          <h3>All Questions</h3>
+          {questions.map((q) =>
+        <ul key={q._id}>
+        <Link to={`/questions/${q._id}`}>{q.name}</Link>
+        
+      </ul>
+          )}
+        </div>
+            
+        )
+    }
 }
-
-
 
 export default Home

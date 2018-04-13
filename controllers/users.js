@@ -29,11 +29,12 @@ module.exports = {
 
 	// update an existing user
 	update: (req, res) => {
-		User.findById(req.params.id, (err, user) => {
-			Object.assign(user, req.body)
-			user.save((err, updatedUser) => {
-				res.json({success: true, message: "User updated.", user})
-			})
+		if(!req.body.password) delete req.body.password
+		Object.assign(req.user, req.body)
+		req.user.save((err, updatedUser) => {
+			console.log(err || updatedUser)
+			const token = signToken(updatedUser)
+			res.json({ success: true, message: "User updated. Token attached.", user: updatedUser, token})
 		})
 	},
 
