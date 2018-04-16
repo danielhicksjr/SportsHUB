@@ -27,5 +27,6 @@ This app is an app for Sports Enthusiasts to have a central location to talk abo
 4. facebook/google log in option
 5. A comments section that shows each user and has their profile pic attached as well.
 6. A link to your favorite teams latest news and scores from games.
+7. A 3rd Party API for live sports scores to display.
 
 
