@@ -59,7 +59,7 @@ class Profile extends React.Component {
                
                 <h1 class="profile-css">{currentUser.name}</h1> 
                 <div class="img">
-                <img src="https://i.imgur.com/CrAyzPv.png"/>
+                <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png"/>
                 </div>
                 <Link to={`/profile/edit`}>Edit Profile</Link>
                 <h3>My Questions</h3>

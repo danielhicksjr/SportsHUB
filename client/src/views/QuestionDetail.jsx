@@ -35,7 +35,7 @@ class CurrentQuestion extends React.Component {
           {/* <input name="name" type="text" placeholder="Subject" value={name} />
           <input name="details" type="text" placeholder="Question" value={details} /> */}
           <input name="answers" type="text" placeholder="Your Answer" value={answers} />
-          <button>Submit</button>
+          <Button>Submit</Button>
         </form>
       </div>
     )
