@@ -34,17 +34,18 @@
   text-align: left;
   font-size: 20px;
   border-style: solid;
-  margin: 35px;
+  margin: 20px;
   width: 55%;
  color:white;
- background-color: white;
+ background-color: whitesmoke;
+ display: inline-block;
 }
 
 .img{
-  max-height: 150px;
+  /* max-height: 150px; */
 max-width: 200px;
 width: 120px;
-height: 120px;
+/* height: 120px; */
 }
 
   .questions-display {
@@ -53,11 +54,13 @@ height: 120px;
   }
 
   #root {
-    background-image: url("https://i.imgur.com/MhRxutMl.jpg");
-    background-attachment: fixed;
+    background-image: url("https://hdwallpaper20.com/wp-content/uploads/2016/10/basketball-wallpaper-free-Download4.jpg");
+    /* background-attachment: fixed; */
     width: 100%;
-    height: 100%;
+    /* background-size:35% auto; */
     background-size: cover; 
+    min-height: 60em;
+    background-attachment: fixed;
 
   }
 
@@ -68,7 +71,22 @@ height: 120px;
     box-sizing: border-box;
     font-size: 76.5%;
   }
-  /* .Questions a {
-
+  
+.profile {
+    color: whitesmoke;
   }
-   */
+
+ h4 {
+    display: inline-block;
+    text-align: center;
+  }
+
+  h3 {
+   color: yellow;
+  }
+
+  .questions3 {
+    font-size: 20px;
+    background: Blue;
+  }
+ 

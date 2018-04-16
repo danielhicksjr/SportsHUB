@@ -33,7 +33,7 @@ class Home extends React.Component {
           <h4>All Questions</h4>
             </div>
             <div class="questions-display">
-          {questions.map((q) =>
+          {questions.reverse().map((q) =>
         <ul key={q._id} class="questions">
         <Link to={`/questions/${q._id}`}>{q.name}</Link>
         </ul>

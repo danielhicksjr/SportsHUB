@@ -39,7 +39,7 @@ class Questions extends React.Component {
             
         <div>
 
-          <h1>SportsHUB</h1>
+          
           <h3>Question</h3>
         
              <Card key={question._id}>

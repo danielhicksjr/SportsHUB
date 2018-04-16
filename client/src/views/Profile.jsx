@@ -63,11 +63,13 @@ class Profile extends React.Component {
                 </div>
                 <Link to={`/profile/edit`}>Edit Profile</Link>
                 <h3>My Questions</h3>
+
                 {questions.map((q) =>
 
-                    <div key={q._id}>
+                    <div class="profile" key={q._id}>
                     
-                    <h3>{q.name}</h3>
+                    <h3 >{q.name}</h3>
+                    
                     <button type="button" onClick={this.handleDeleteClck.bind(this, q._id)}>Delete</button>   
                     
                      

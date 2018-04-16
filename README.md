@@ -1,15 +1,15 @@
 # SportHUB Application
-This app is an app for Sports Enthusists to have a central location to talk about all things sports and engage with other sports fans and talk about related topics and current stories in the world of sports. 
+This app is an app for Sports Enthusiasts to have a central location to talk about all things sports and engage with other sports fans and talk about related topics and current events going on in the world of sports. 
 
 # Technologies Used
 
 1. NodeJS, Express, Mongoose SQL, REACT, HTML, CSS, JavaScript, jQuery, Bootstrap, NPM Packages
+
 # User Stories
 
 1. As a User, I like an app that has a central location to talk about anything sports related. 
 2. As a User, I like an app that is simple and easy to use.
 3. As a User, I want to know that my information is secure.
-4.   
 
  # Approach Taken
 
@@ -25,6 +25,7 @@ This app is an app for Sports Enthusists to have a central location to talk abou
 2. a ratings/like/unlike option.
 3. a chat option 
 4. facebook/google log in option
-
+5. A comments section that shows each user and has their profile pic attached as well.
+6. A link to your favorite teams latest news and scores from games.
 
 
