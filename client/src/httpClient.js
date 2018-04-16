@@ -81,6 +81,9 @@ httpClient.deleteProfile = function() {
 	return this({method: 'delete', url: `/api/users/me`})
 }
 
+httpClient.deleteQuestion = function(id) {
+	return this({method: 'delete', url: `/api/questions/${id}`})
+}
 
 httpClient.updateProile = function(fields) {
     return this({method: 'delete', url: `/api/users/me`, data: fields})

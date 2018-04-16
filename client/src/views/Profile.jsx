@@ -56,16 +56,22 @@ class Profile extends React.Component {
 	
         return (
             <div >
-                <h1>{currentUser.name}</h1> 
+               
+                <h1 class="profile-css">{currentUser.name}</h1> 
+                <div class="img">
+                <img src="https://i.imgur.com/CrAyzPv.png"/>
+                </div>
                 <Link to={`/profile/edit`}>Edit Profile</Link>
                 <h3>My Questions</h3>
                 {questions.map((q) =>
-                    <Card key={q._id}>
-                    <CardTitle>{q.name}</CardTitle>
-                    <Button type="button" onClick={this.handleDeleteClck.bind(this, q._id)}>Delete</Button>   
+
+                    <div key={q._id}>
+                    
+                    <h3>{q.name}</h3>
+                    <button type="button" onClick={this.handleDeleteClck.bind(this, q._id)}>Delete</button>   
                     
                      
-                    </Card>
+                    </div>
                 )}
             </div>
         )

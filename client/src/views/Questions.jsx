@@ -39,13 +39,13 @@ class Questions extends React.Component {
             
         <div>
 
-          <h1>SportsHUB</h1>
+         
           <h3>Question</h3>
-        
-             <Card>
+          <div className="question1">
+             <Card key={question._id}>
         <CardTitle>{question.name}</CardTitle>
         <CardText>{question.details}</CardText>
-
+       
            {question.answers && question.answers.map((a) => {
          return <p>{a.body}</p>
       })}
@@ -60,7 +60,7 @@ class Questions extends React.Component {
         </FormGroup>
       </Form>
       </Card>
-     
+      </div>
         </div>
         )
     }
