@@ -1,4 +1,4 @@
-# SportHUB Application
+# SportsHUB Application
 This app is an app for Sports Enthusiasts to have a central location to talk about all things sports and engage with other sports fans and talk about related topics and current events going on in the world of sports. 
 
 # Technologies Used
