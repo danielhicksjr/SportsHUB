@@ -32,7 +32,7 @@ const NavBar = (props) => {
 			<a class="nav-item nav-link" href="/questions/new">Ask Question</a>
 
 			<a class="nav-item nav-link" href="/profile">Profile</a>
-			<a class="nav-item nav-link" href="/signup">Sign Up</a>
+			
 			{props.currentUser
 					  ? (
 						  <span class="navbar1">

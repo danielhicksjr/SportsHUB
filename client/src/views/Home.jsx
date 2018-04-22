@@ -31,6 +31,7 @@ class Home extends React.Component {
         <div>
             <div class="all-questions">
           <h4>All Questions</h4>
+          <h5>Click on the question to view more</h5>
             </div>
             <div class="questions-display">
           {questions.reverse().map((q) =>
@@ -52,3 +53,19 @@ export default Home
 
 
 
+{/* <div class="row">
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Card Title</span>
+          {questions.reverse().map((q) =>
+         <ul key={q._id} class="questions">
+         <p></p
+        </div>
+        <div class="card-action">
+          <a href="/qu">This is a link</a>
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div> */}

@@ -11,8 +11,7 @@
   box-sizing: border-box;
   position: relative;
   margin: 0px auto;
-  color: black;
-  background-color: brown;
+  
 } 
 
 .home {
@@ -22,7 +21,7 @@
     margin: auto;
     padding: 30px;
     font-size: 20px;
-    color: rgb(255, 255, 255);
+    color: linear-gradient(#1e92af, #475591);;
 
     width: 600px;
     display: center;
@@ -34,11 +33,13 @@
   text-align: left;
   font-size: 20px;
   border-style: solid;
-  margin: 20px;
+  margin: 10px;
   width: 55%;
  color:white;
  background-color: whitesmoke;
  display: inline-block;
+ border: 2px gray;
+    border-radius: 5px;
 }
 
 .img{
@@ -54,13 +55,10 @@ width: 120px;
   }
 
   #root {
-    background-image: url("https://mk0slamonlinensgt39k.kinstacdn.com/wp-content/uploads/2013/08/playground.jpg");
-    /* background-attachment: fixed; */
-    width: 100%;
-    /* background-size:35% auto; */
-    background-size: cover; 
-    min-height: 60em;
-    background-attachment: fixed;
+    background: linear-gradient(#3d4356, #475591);
+    background-size: cover;
+    max-height: 100%;
+    background-repeat:no-repeat
 
   }
 
@@ -91,4 +89,10 @@ width: 120px;
     font-size: 20px;
     background: yellow;
   }
- 
+  .all-questions {
+    color: white;
+  }
+
+  .question8 {
+    color: white;
+  }

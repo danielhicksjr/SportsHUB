@@ -40,7 +40,7 @@ class Questions extends React.Component {
         <div>
 
           
-          <h3>Question</h3>
+          <h3 key="question8">Question</h3>
         
              <Card key={question._id}>
         <CardTitle class= "question4">{question.name}</CardTitle>
@@ -54,7 +54,7 @@ class Questions extends React.Component {
         <FormGroup>
           <Label for="exampleText">Your Answer</Label>
           <Input type="textarea" name="text" id="exampleText" />
-          <Input type="submit"></Input>
+          <button type="submit">Submit</button>
           
 
         </FormGroup>
