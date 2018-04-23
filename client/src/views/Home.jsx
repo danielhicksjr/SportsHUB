@@ -22,7 +22,7 @@ class Home extends React.Component {
 
 
     render() {
-        const { questions } = this.state
+        const { questions, question } = this.state
 
         
 
@@ -34,9 +34,9 @@ class Home extends React.Component {
           <h5>Click on the question to view more</h5>
             </div>
             <div class="questions-display">
-          {questions.reverse().map((q) =>
-        <ul key={q._id} class="questions">
-        <Link to={`/questions/${q._id}`}>{q.name}</Link>
+          {questions.reverse().map((question) =>
+        <ul key={question._id} class="questions">
+        <Link to={`/questions/${question._id}`}>{question.name}</Link>
         </ul>
         )}
             </div>
@@ -47,7 +47,6 @@ class Home extends React.Component {
 }
 
 export default Home
-
 
 
 

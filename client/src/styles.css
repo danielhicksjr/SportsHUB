@@ -21,7 +21,7 @@
     margin: auto;
     padding: 30px;
     font-size: 20px;
-    color: linear-gradient(#1e92af, #475591);;
+    color: linear-gradient(#1e92af, #475591);
 
     width: 600px;
     display: center;
@@ -35,7 +35,7 @@
   border-style: solid;
   margin: 10px;
   width: 55%;
- color:white;
+ color: white;
  background-color: whitesmoke;
  display: inline-block;
  border: 2px gray;
@@ -55,7 +55,8 @@ width: 120px;
   }
 
   #root {
-    background: linear-gradient(#3d4356, #475591);
+    /* background: linear-gradient(#3d4356, #475591); */
+    background-image: url("https://www.wallpaperflare.com/static/135/133/308/los-angeles-california-evening-playground-wallpaper.jpg");
     background-size: cover;
     max-height: 100%;
     background-repeat:no-repeat
@@ -90,7 +91,7 @@ width: 120px;
     background: yellow;
   }
   .all-questions {
-    color: white;
+    color: whitesmoke;
   }
 
   .question8 {
