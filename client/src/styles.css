@@ -59,7 +59,8 @@ width: 120px;
     background-image: url("https://www.wallpaperflare.com/static/135/133/308/los-angeles-california-evening-playground-wallpaper.jpg");
     background-size: cover;
     max-height: 100%;
-    background-repeat:no-repeat
+    background-repeat:no-repeat;
+    background-attachment: fixed;
 
   }
 
@@ -75,6 +76,9 @@ width: 120px;
   
 .profile {
     color: whitesmoke;
+      text-align: center;
+      background-color: saddlebrown;
+    
   }
 
  h4 {
