@@ -25,17 +25,7 @@ class Profile extends React.Component {
             }
         
             
-    handleDeleteClck(id) {
-         httpClient.deleteQuestion(id).then((serverResponse) => {
-            console.log(id)
-            this.props.routeProps.history.push('/profile')
-            this.setState({
-                questions: this.state.questions.filter((q) => {
-                    return q._id !== id
-                })
-            })
-        })
-    }
+    
    
 
     componentDidMount(){
@@ -68,9 +58,10 @@ class Profile extends React.Component {
 
                     <div class="profile" key={q._id}>
                     
-                    <h3 >{q.name}</h3>
                     
-                    <button type="button" onClick={this.handleDeleteClck.bind(this, q._id)}>Delete</button>   
+                    <Link to={`/questions/${q._id}`}>{q.name}</Link>
+                    
+                      
                     
                      
                     </div>

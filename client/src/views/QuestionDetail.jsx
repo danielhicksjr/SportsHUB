@@ -9,6 +9,7 @@ class CurrentQuestion extends React.Component {
     fields: { name: '', details: '', answers: '' }
   }
 
+
   handleFormChange(evt) {
     this.setState({
       fields: {
@@ -36,6 +37,7 @@ class CurrentQuestion extends React.Component {
           <input name="details" type="text" placeholder="Question" value={details} /> */}
           <input name="answers" type="text" placeholder="Your Answer" value={answers} />
           <button>Submit</button>
+          
         </form>
       </div>
     )

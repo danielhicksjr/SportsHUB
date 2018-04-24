@@ -32,6 +32,7 @@ class Home extends React.Component {
             <div class="all-questions">
           <h4>All Questions</h4>
           <h5>Click on the question to view more</h5>
+          <a class="btn btn-primary" href="/questions/new" role="button">Ask Question</a>
             </div>
             <div class="questions-display">
           {questions.reverse().map((question) =>
@@ -41,6 +42,8 @@ class Home extends React.Component {
         )}
             </div>
         </div>
+
+        
             
         )
     }

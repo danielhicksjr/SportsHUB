@@ -7,7 +7,9 @@ import httpClient from '../httpClient'
 
 class Questions extends React.Component {
 
-    state = { question: [] }
+    state = { question: [],
+      questions: [],
+      fields: { name: '', email: '', password: ''} }
 
     componentDidMount(){
        var questionId = this.props.routeProps.match.params.id
@@ -31,10 +33,24 @@ class Questions extends React.Component {
           })
         })
     }
+    handleDeleteClck(id) {
+      httpClient.deleteQuestion(id).then((serverResponse) => {
+         console.log(id)
+         this.props.routeProps.history.push('/profile')
+         this.setState({
+             questions: this.state.questions.filter((q) => {
+                 return q._id !== id
+             })
+         })
+     })
+ }
 
 
-    render() {
+    render(props) {
         const { question } = this.state
+        const {currentUser} = this.props
+        
+      
        return (
             
         <div>
@@ -54,7 +70,24 @@ class Questions extends React.Component {
         <FormGroup>
           <Label for="exampleText">Your Answer</Label>
           <Input type="textarea" name="text" id="exampleText" />
+          
+          {currentUser
+					  ? (
+						  <span class="questions1">
           <button type="submit">Submit</button>
+          <button type="button" onClick={this.handleDeleteClck.bind(this, question._id)}>Delete</button>
+          
+	</span>
+					  )
+					  : (
+			
+						  <span class="questions1">
+          <button type="submit">Submit</button>
+          </span>
+					  )
+				  }
+
+          
           
 
         </FormGroup>

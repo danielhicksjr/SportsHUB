@@ -28,22 +28,26 @@ const NavBar = (props) => {
 		</button>
 		<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 		  <div className="navbar-nav">
-			<a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-			<a class="nav-item nav-link" href="/questions/new">Ask Question</a>
-
-			<a class="nav-item nav-link" href="/profile">Profile</a>
+			<a class="nav-link" href="/">Home</a>
+		
 			
 			{props.currentUser
 					  ? (
 						  <span class="navbar1">
 		  
 			<a class="nav-item nav-link" href="/logout">Log Out</a>
+			<a class="nav-item nav-link" href="/profile">Profile</a>
+		
 			</span>
 					  )
 					  : (
-						  <span>
-			<a class="nav-item nav-link" href="/login">Log In</a>
 			
+						  <span class="navbar1">
+			<a class=" nav-item nav-link" href="/signup">Sign Up</a>
+			<a class="nav-item nav-link" href="/login">Log In</a>	
+
+
+		
 			</span>
 					  )
 				  }
@@ -62,3 +66,4 @@ const NavBar = (props) => {
 
 
 export default NavBar
+
